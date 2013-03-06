@@ -6,9 +6,13 @@
 
 ## Config is in the seperate config.inc file, please make all changes in there
 
-. config.inc
-
 #########################################################################################
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+
+. $SCRIPTPATH/config.inc
 
 echo "  Autodelete script for XBMC and TVHeadend"
 echo "  By Andy Brown - https://github.com/andyb2000"
@@ -18,6 +22,8 @@ if [ "x$CONFIG" == "x" ]; then
 	echo "ERROR: Config file was not loaded, aborting now"
 	exit 1
 fi
+
+echo "Config loaded from: $SCRIPTPATH/config.inc"
 
 if [ "$TESTING" == "1" ]; then
 	echo "TESTING mode enabled. Delete will NOT take place"
