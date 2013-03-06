@@ -43,13 +43,15 @@ if [ "$TYPE" == "mysql" ]; then
 		if [ "x$FINDER" != "x" ]; then
 			echo "DELETE:  $FINDER"
 			if [ "$TESTING" == "0" ]; then
-				DORM=`rm -f '$FINDER'`
+				DORM=`rm -fv $FINDER`
+				echo "RM output: $DORM"
 			fi
 			CHK_TVH=`grep $FINDER $PATH_TO_TVHEADEND_CONFIG/tvheadend/dvr/log/* | cut -d ":" -f 1`
 			if [ "x$CHK_TVH" != "x" ]; then
 				echo "Find in TVH: $CHK_TVH"
 				if [ "$TESTING" == "0" ]; then
-					DORM=`rm -f '$CHK_TVH'`
+					DORM=`rm -fv $CHK_TVH`
+					echo "RM output: $DORM"
 				fi
 			fi
 		fi
