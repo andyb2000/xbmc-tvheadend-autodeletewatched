@@ -7,8 +7,8 @@ TYPE="mysql";                   		# set to mysql or sqlite
 ## Mysql specific settings
 MYSQL_HOST="localhost";         		# mysql: server ip or hostname
 MYSQL_USER="root";              		# mysql: username
-MYSQL_PASS="wibble";	        		# mysql: password
-MYSQL_DB="MyVideos116";                    		# mysql: db - If blank will calculate the newest
+MYSQL_PASS="";	        		# mysql: password
+MYSQL_DB="";                    		# mysql: db - If blank will calculate the newest
 
 ## Sqlite specific settings
 SQDB_PATH="/home/xbmc/.xbmc"    		# Path to the .xbmc folder
